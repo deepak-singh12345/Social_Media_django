@@ -1,0 +1,29 @@
+{% extends 'users/base.html' %}
+{% block body %}
+<h2 class="text-2xl m-10 font-bold">Edit user profile</h2>
+<div class="container py-5 mx-10">
+
+    <form method="post" enctype="multipart/form-data" class="bg-white shadow-md m-10 p-8 rounded mb-4 w-4/5">
+        {% csrf_token %}
+        <div class="mb-2">
+
+        <label class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
+        <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-700">{{user_form.first_name}}</div>
+
+        <label class="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
+        <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-700">{{user_form.last_name}}</div>
+
+        <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+        <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-700">{{user_form.email}}</div>
+
+        <label class="block text-gray-700 text-sm font-bold mb-2">Profile Photo</label>
+        <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-700">{{profile_form.photo}}</div>
+
+    </div>
+
+    <button type="submit" class="bg-green-500 text-white my-5 px-5 py-2">Submit</button>
+    </form>
+
+</div>
+
+{% endblock %}
